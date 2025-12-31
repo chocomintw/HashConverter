@@ -21,7 +21,17 @@
             return hash;
         }
 
-        public static string ComputeHex(string key)
+        public static string SignedCompute(string key)
+        {
+            return ((int)Compute(key)).ToString();
+        }
+
+        public static string UnsignedCompute(string key)
+        {
+            return Compute(key).ToString();
+        }
+
+        public static string HexCompute(string key)
         {
             return "0x" + Compute(key).ToString("X8");
         }
